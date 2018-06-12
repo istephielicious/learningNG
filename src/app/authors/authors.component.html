@@ -1,0 +1,12 @@
+<h2>{{ authors.length}} Authors</h2>
+<ul>
+  <li *ngFor="let author of authors">{{ author }}</li>
+</ul>
+
+<input (keyUp.enter)="onKeyUp($event)"/><br/>
+<input #email (keyUp.enter)="onEnter(email.value)"/><br/>
+
+<!-- Property binding -->
+<input [value]="mail" (keyUp.enter)="mail = $event.target.value; onEnterKey()"/><br/>
+<!-- Two way binding using directive-->
+<input [(ngModel)]="mail" (keyUp.enter)="onEnterKey()"/>
